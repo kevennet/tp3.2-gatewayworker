@@ -42,6 +42,7 @@ class Cache {
             $cache = new $class($options);
         else
             E(L('_CACHE_TYPE_INVALID_').':'.$type);
+        dump($cache->get('cache'));
         return $cache;
     }
 

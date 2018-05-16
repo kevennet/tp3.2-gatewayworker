@@ -96,10 +96,12 @@ class File extends Cache {
                 }
             }else {
             	$content   =  substr($content,20, -3);
+                dump($content);
             }
             if(C('DATA_CACHE_COMPRESS') && function_exists('gzcompress')) {
                 //启用数据压缩
                 $content   =   gzuncompress($content);
+
             }
             $content    =   unserialize($content);
             return $content;

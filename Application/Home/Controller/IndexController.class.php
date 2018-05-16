@@ -8,20 +8,23 @@ use Vendor\Text\Text3;
 class IndexController extends Controller  {
 
     public function index(){
+        dump($_GET);
 
-    	$Text1=new Text1();
-    	dump($Text1->text1_index());
-    	$Text2=new Text2();
-    	dump($Text2->text2_index());
-        $Text3=new Text3();
-        dump($Text3->text3_index());
-        dump(Text3::text4_index());
+        $rule=array(
+            array('msg','','字段1不能重复',0,'unique'),
+            array('time','','字段2不能重复',0,'unique'),
+
+        );
+        $table=M('workermen');
+        $res=$table->validate($rule)->create($_GET);
+        dump($table->getError());
+        dump($res);
+
 
     }
 
     public function index1(){
-    	$Text1=new Text1();
-    	dump($Text1->text1_index());
+            dump(S('cache'));
     }
 
 }

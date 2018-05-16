@@ -1089,6 +1089,7 @@ function redirect($url, $time=0, $msg='') {
  * @return mixed
  */
 function S($name,$value='',$options=null) {
+    dump($name);
     static $cache   =   '';
     if(is_array($options)){
         // 缓存操作的同时初始化
