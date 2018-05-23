@@ -34,15 +34,20 @@ class Events
     * @param mixed $message
     */
    public static function onMessage($client_id, $message)
-   {
+   {    
+         $debug_state=0;
         // debug
-        echo "client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id session:".json_encode($_SESSION)." onMessage:".$message."\n";
-        $html="client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id session:".json_encode($_SESSION)." onMessage:".$message;
-        $conn = mysqli_connect('localhost','Ubuntu', '123456' ,'test');
-        $client_id=$client_id;
-        $server_ip=$_SERVER['REMOTE_ADDR'];
-        $onmessage=$message;
-        $msg=$html;
+        if($debug_state==0){
+            echo "client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id session:".json_encode($_SESSION)." onMessage:".$message."\n";
+        }
+        if($debug_state>0){
+            $html="client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id session:".json_encode($_SESSION)." onMessage:".$message;
+            $conn = mysqli_connect('localhost','root', '' ,'test');
+            $client_id=$client_id;
+            $server_ip=$_SERVER['REMOTE_ADDR'];
+            $onmessage=$message;
+            $msg=$html;
+        }
         // 客户端传递的是json数据
         $message_data = json_decode($message, true);
         if(!$message_data)
@@ -54,8 +59,10 @@ class Events
         {
             // 客户端回应服务端的心跳
             case 'pong':
-                $sql="INSERT INTO `bm_message`  (`client_id`,`server_ip` ,`onmessage` ,`msg` ,`type`,`client_name`,`room_id`) VALUES('".$client_id."','".$server_ip."','".$onmessage."','".$msg."','pong','".$_SESSION['client_name']."','".$_SESSION['room_id']."');";
-                $res=$conn->query($sql);
+                if($debug_state>0){
+                    $sql="INSERT INTO `bm_message`  (`client_id`,`server_ip` ,`onmessage` ,`msg` ,`type`,`client_name`,`room_id`) VALUES('".$client_id."','".$server_ip."','".$onmessage."','".$msg."','pong','".$_SESSION['client_name']."','".$_SESSION['room_id']."');";
+                    $res=$conn->query($sql);
+                }
                 return;
             // 客户端登录 message格式: {type:login, name:xx, room_id:1} ，添加到客户端，广播给所有客户端xx进入聊天室
             case 'login':
@@ -104,14 +111,15 @@ class Events
                          }
                      }
                      Gateway::sendToGroup($room_id, json_encode($new_message),$return_arr);
-                     var_dump($return_arr);
                 }
                 Gateway::joinGroup($client_id, $room_id);
                 // 给当前用户发送用户列表 
                 $new_message['client_list'] = $clients_list;
                 Gateway::sendToCurrentClient(json_encode($new_message));
-                $sql="INSERT INTO `bm_message`  (`client_id`,`server_ip` ,`onmessage` ,`msg` ,`type`,`client_name`,`room_id`) VALUES('".$client_id."','".$server_ip."','".$onmessage."','".$msg."','login','".$_SESSION['client_name']."','".$_SESSION['room_id']."');";
-                $res=$conn->query($sql);
+                if($debug_state>0){
+                    $sql="INSERT INTO `bm_message`  (`client_id`,`server_ip` ,`onmessage` ,`msg` ,`type`,`client_name`,`room_id`) VALUES('".$client_id."','".$server_ip."','".$onmessage."','".$msg."','login','".$_SESSION['client_name']."','".$_SESSION['room_id']."');";
+                    $res=$conn->query($sql);
+                }
                 return;
                 
             // 客户端发言 message: {type:say, to_client_id:xx, content:xx}
@@ -123,8 +131,10 @@ class Events
                 }
                 $room_id = $_SESSION['room_id'];
                 $client_name = $_SESSION['client_name'];
-                $sql="INSERT INTO `bm_message`  (`client_id`,`server_ip` ,`onmessage` ,`msg` ,`type`,`client_name`,`room_id`) VALUES('".$client_id."','".$server_ip."','".$onmessage."','".$msg."','say','".$_SESSION['client_name']."','".$_SESSION['room_id']."');";
-                $res=$conn->query($sql);
+                if($debug_state>0){
+                    $sql="INSERT INTO `bm_message`  (`client_id`,`server_ip` ,`onmessage` ,`msg` ,`type`,`client_name`,`room_id`) VALUES('".$client_id."','".$server_ip."','".$onmessage."','".$msg."','say','".$_SESSION['client_name']."','".$_SESSION['room_id']."');";
+                    $res=$conn->query($sql);
+                }
                 // 私聊
                 if($message_data['to_client_id'] != 'all')
                 {
@@ -159,8 +169,13 @@ class Events
     */
    public static function onClose($client_id)
    {
+
+
+        $debug_state=0;
        // debug
-       echo "client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id onClose:''\n";
+       if($debug_state==0){
+            echo "client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id onClose:''\n";
+       }
        if(isset($_SESSION['room_id']))
        {
            $room_id = $_SESSION['room_id'];
