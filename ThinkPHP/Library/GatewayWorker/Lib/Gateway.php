@@ -912,6 +912,19 @@ class Gateway
         }
         return $addresses_cache;
     }
+    /**
+     * 用户反选删除处理
+     * @DateTime:    [2018-05-23 11:36:34]
+     */
+    protected static function reAllid($client_name,$room_id,&$return_arr){
+
+        $origin_list=Gateway::getClientSessionsByGroup($room_id);
+        foreach ($origin_list as $key => $value) {
+            if($value['client_name']!=$client_name){
+                array_push($return_arr,$value['client_name']);
+            }
+        }
+    }
 }
 
 if (!class_exists('\Protocols\GatewayProtocol')) {
