@@ -27,6 +27,36 @@ use \GatewayWorker\Lib\Gateway;
 
 class Events
 {
+    public static function onWorkerStart($businessWorker)
+    {
+       //echo "WorkerStart\n";
+    }
+
+    /**
+     * 链接
+     * @DateTime:    [2018-05-26 15:18:05]
+     */
+    public static function onConnect($client_id)
+    {
+
+       //echo $client_id."\n";
+    }
+    /**
+     * gatewayworker 协议数据
+     * @param  [type] $client_id [description]
+     * @param  [type] $data      [description]
+     * @return [type]            [description]
+     */
+    public static function onWebSocketConnect($client_id, $data)
+    {
+        //var_export($data);
+
+    }
+
+    public static function onWorkerStop($businessWorker)
+    {
+       //echo "WorkerStop\n";
+    }
 
    /**
     * 有消息时
@@ -35,10 +65,17 @@ class Events
     */
    public static function onMessage($client_id, $message)
    {    
+        $manage_arr=array(
+            'xiao_ming',
+            'manage_a',
+        );
+
+
+
          $debug_state=0;
         // debug
         if($debug_state==0){
-            echo "client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id session:".json_encode($_SESSION)." onMessage:".$message."\n";
+            //echo "client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id session:".json_encode($_SESSION)." onMessage:".$message."\n";
         }
         if($debug_state>0){
             $html="client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id session:".json_encode($_SESSION)." onMessage:".$message;
@@ -86,13 +123,13 @@ class Events
                 }
                 $clients_list[$client_id] = $client_name;
                 foreach ($clients_list as $key => $value) {
-                    if($_SESSION['client_name']=='xiao_ming'){
-                        if($value=='xiao_ming'){
+                    if(in_array($_SESSION['client_name'],$manage_arr)){
+                        if(in_array($value,$manage_arr)){
                              unset($clients_list[$key]);
                         }
                     }
                     else{
-                        if($value!='xiao_ming'){
+                        if(!in_array($value,$manage_arr)){
                              unset($clients_list[$key]);
                         }
                     }
@@ -100,17 +137,28 @@ class Events
                 // 转播给当前房间的所有客户端，xx进入聊天室 message {type:login, client_id:xx, name:xx} 
                 $new_message = array('type'=>$message_data['type'], 'client_id'=>$client_id, 'client_name'=>htmlspecialchars($client_name), 'time'=>date('Y-m-d H:i:s'));
 
-                if($_SESSION['client_name']=='xiao_ming'){
+                if(in_array($_SESSION['client_name'],$manage_arr)){
+                    //var_dump($_SESSION['client_name']);
+                    //var_dump($manage_arr);
+                    //echo 1;
+                    //echo "\n";
                     Gateway::sendToGroup($room_id, json_encode($new_message));
                 }
                 else{
+                    //echo 2;
                      $return_arr=array();
+
                      foreach ($temp_clients_list as $key => $value) {
-                         if($value['client_name']!='xiao_ming'){
+                         if(!in_array($value['client_name'],$manage_arr)){
                              array_push($return_arr,$key);
                          }
                      }
+                     //var_dump($temp_clients_list);
+                     //var_dump($_SESSION['client_name']);
+                     //var_dump($manage_arr);
+                     //var_dump($return_arr);
                      Gateway::sendToGroup($room_id, json_encode($new_message),$return_arr);
+                     $return_arr=array();
                 }
                 Gateway::joinGroup($client_id, $room_id);
                 // 给当前用户发送用户列表 
@@ -170,24 +218,28 @@ class Events
    public static function onClose($client_id)
    {
 
+        $manage_arr=array(
+            'xiao_ming',
+            'manage_a',
+        );
 
         $debug_state=0;
        // debug
        if($debug_state==0){
-            echo "client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id onClose:''\n";
+           // echo "client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id onClose:''\n";
        }
        if(isset($_SESSION['room_id']))
        {
            $room_id = $_SESSION['room_id'];
            $new_message = array('type'=>'logout', 'from_client_id'=>$client_id, 'from_client_name'=>$_SESSION['client_name'], 'time'=>date('Y-m-d H:i:s'));
-            if($_SESSION['client_name']=='xiao_ming'){
+            if(in_array($_SESSION['client_name'],$manage_arr)){
                 Gateway::sendToGroup($room_id, json_encode($new_message));
             }
             else{
                  $return_arr=array();
                  $temp_clients_list=Gateway::getClientSessionsByGroup($room_id);
                  foreach ($temp_clients_list as $key => $value) {
-                     if($value['client_name']!='xiao_ming'){
+                     if(!in_array($value['client_name'],$manage_arr)){
                          array_push($return_arr,$key);
                      }
                  }

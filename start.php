@@ -33,5 +33,6 @@ foreach(glob(__DIR__.'/Workermen/Applications/start*.php') as $start_file)
 {
     require_once $start_file;
 }
+require_once glob(__DIR__.'/Workermen/Applications/start_text_gateway.php');
 // 运行所有服务
 Worker::runAll();
