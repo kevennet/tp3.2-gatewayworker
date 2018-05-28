@@ -8,7 +8,7 @@ use Vendor\Text\Text3;
 use GatewayClient\Gateway;
 
 class IndexController extends Controller  {
-
+    static $t_int=1;
     public function index(){
         dump($_GET);
 
@@ -30,10 +30,34 @@ class IndexController extends Controller  {
     }
 
     public function index3(){
-        dump(Gateway::getAllClientIdCount());
-        echo Gateway::getAllClientCount();
-        $msg='{"type":"say","from_client_id":"7f00000108fc00000007","from_client_name":"asdasd","to_client_id":"7f00000108fc00000006","content":"<b>\u5bf9\u4f60\u8bf4: <\/b>e12e12e","time":"2018-05-26 10:57:32"}';
-        Gateway::sendToAll($msg);
+        // $int=1;
+        // dump(Gateway::getClientIdByUid($int));
+        // $client_id=Gateway::getClientIdByUid($int);
+        // $group=7;
+        // dump(Gateway::joinGroup($client_id[0], $group));
+        //dump(Gateway::leaveGroup($client_id[0], $group));
+        // dump(Gateway::isUidOnline(1));
+        // dump(Gateway::getClientIdCountByGroup(8));
+        // dump(Gateway::isOnline($client_id['0']));
+         dump(Gateway::getAllClientSessions());
+        // dump(Gateway::getClientSessionsByGroup(8));
+        //dump(Gateway::closeClient($client_id[0]));
+        //dump(Gateway::getAllGroupClientIdList());
+        //dump(Gateway::getAllGroupUidList());
+        //dump(Gateway::getUidListByGroup(8));
+        //dump(Gateway::getAllGroupUidCount());
+        //dump(Gateway::getAllGroupIdList());
+        //dump(Gateway::getUidByClientId($client_id['0']));
+        //dump(Gateway::getAllUidList());
+        //dump(Gateway::getAllClientIdList());
+        //dump(Gateway::getAllClientIdList());
+        //dump(Gateway::getClientIdListByGroup(8));
+
+    }
+    public function index4(){
+        dump(Gateway::getAllClientSessions());
+        dump(Gateway::getClientSessionsByGroup(8));
+        dump(Gateway::getClientSessionsByGroup(7));
     }
 
 }

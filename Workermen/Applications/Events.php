@@ -27,6 +27,7 @@ use \GatewayWorker\Lib\Gateway;
 
 class Events
 {
+    static $temp_int=0;
     public static function onWorkerStart($businessWorker)
     {
        //echo "WorkerStart\n";
@@ -39,7 +40,8 @@ class Events
     public static function onConnect($client_id)
     {
 
-       //echo $client_id."\n";
+        
+        //echo 'connect'.$client_id."===>$time\n";
     }
     /**
      * gatewayworker 协议数据
@@ -65,6 +67,7 @@ class Events
     */
    public static function onMessage($client_id, $message)
    {    
+        
         $manage_arr=array(
             'xiao_ming',
             'manage_a',
@@ -108,12 +111,39 @@ class Events
                 {
                     throw new \Exception("\$message_data['room_id'] not set. client_ip:{$_SERVER['REMOTE_ADDR']} \$message:$message");
                 }
+                self::$temp_int++;
+                $time=self::$temp_int;
+                Gateway::bindUid($client_id,$time);
                 // 把房间号昵称放到session中
                 $room_id = $message_data['room_id'];
                 $client_name = htmlspecialchars($message_data['client_name']);
                 $_SESSION['room_id'] = $room_id;
                 $_SESSION['client_name'] = $client_name;
-              
+                /************************如果client_name已经登陆则告诉客户端这个人已经登陆了，客户端发请求断开这个链接***************************/
+                $now_client=Gateway::getAllClientSessions();
+                if(count($now_client)>0){
+                    foreach ($now_client as $key_client_list => $value_client_list) {
+                        if(isset($value_client_list['client_name'])){
+                            //var_dump($value_client_list['client_name']);
+                            if($value_client_list['client_name'] == $client_name && $key_client_list<$client_id){
+                                $new_message=array(
+                                    'type'=>'login_out', 
+                                    'client_id'=>$key_client_list, 
+                                    'client_name'=>htmlspecialchars($client_name), 
+                                    'time'=>date('Y-m-d H:i:s')
+                                );
+                                var_dump(array(
+                                    $key_client_list,
+                                    json_encode($new_message)
+                                ));
+                                Gateway::closeClient($key_client_list);
+                                Gateway::sendToClient($key_client_list, json_encode($new_message));
+                            }
+                        }
+                    }
+                }
+                /*********************如果client_name已经登陆则告诉客户端这个人已经登陆了，客户端发请求断开这个链接******************************/
+
                 // 获取房间内所有用户列表 
                 $clients_list = Gateway::getClientSessionsByGroup($room_id);
                 $temp_clients_list=$clients_list;
@@ -136,16 +166,11 @@ class Events
                 }
                 // 转播给当前房间的所有客户端，xx进入聊天室 message {type:login, client_id:xx, name:xx} 
                 $new_message = array('type'=>$message_data['type'], 'client_id'=>$client_id, 'client_name'=>htmlspecialchars($client_name), 'time'=>date('Y-m-d H:i:s'));
-
+                /*****************************屏蔽全局聊天**************************************/
                 if(in_array($_SESSION['client_name'],$manage_arr)){
-                    //var_dump($_SESSION['client_name']);
-                    //var_dump($manage_arr);
-                    //echo 1;
-                    //echo "\n";
                     Gateway::sendToGroup($room_id, json_encode($new_message));
                 }
                 else{
-                    //echo 2;
                      $return_arr=array();
 
                      foreach ($temp_clients_list as $key => $value) {
@@ -153,13 +178,10 @@ class Events
                              array_push($return_arr,$key);
                          }
                      }
-                     //var_dump($temp_clients_list);
-                     //var_dump($_SESSION['client_name']);
-                     //var_dump($manage_arr);
-                     //var_dump($return_arr);
                      Gateway::sendToGroup($room_id, json_encode($new_message),$return_arr);
                      $return_arr=array();
                 }
+                /******************************屏蔽全局聊天*************************************/
                 Gateway::joinGroup($client_id, $room_id);
                 // 给当前用户发送用户列表 
                 $new_message['client_list'] = $clients_list;
