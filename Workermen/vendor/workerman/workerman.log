@@ -7785,3 +7785,73 @@ Stack trace:
 2018-05-26 09:53:51 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3 for detail
 2018-05-26 09:53:51 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3 for detail
 2018-05-26 09:53:51 pid:1 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3 for detail
+2018-05-26 11:01:34 pid:1 Exception: gateway inner pack err cmd=25 in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Gateway.php:797
+Stack trace:
+#0 [internal function]: GatewayWorker\Gateway->onWorkerMessage(Object(Workerman\Connection\TcpConnection), Array)
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#2 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #72)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Gateway.php(279): Workerman\Worker->run()
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\Gateway->run()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#9 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_gateway.php(59): Workerman\Worker::runAll()
+#10 {main}
+2018-05-26 11:01:34 pid:1 Worker process terminated
+2018-05-26 11:01:47 pid:1 Exception: gateway inner pack err cmd=25 in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Gateway.php:797
+Stack trace:
+#0 [internal function]: GatewayWorker\Gateway->onWorkerMessage(Object(Workerman\Connection\TcpConnection), Array)
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#2 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #36)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Gateway.php(279): Workerman\Worker->run()
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\Gateway->run()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#9 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_gateway.php(59): Workerman\Worker::runAll()
+#10 {main}
+2018-05-26 11:01:47 pid:1 Worker process terminated
+2018-05-26 11:02:03 pid:1 Exception: gateway inner pack err cmd=25 in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Gateway.php:797
+Stack trace:
+#0 [internal function]: GatewayWorker\Gateway->onWorkerMessage(Object(Workerman\Connection\TcpConnection), Array)
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#2 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #35)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Gateway.php(279): Workerman\Worker->run()
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\Gateway->run()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#9 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_gateway.php(59): Workerman\Worker::runAll()
+#10 {main}
+2018-05-26 11:02:03 pid:1 Worker process terminated
+2018-05-26 11:02:48 pid:1 Exception: gateway inner pack err cmd=25 in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Gateway.php:797
+Stack trace:
+#0 [internal function]: GatewayWorker\Gateway->onWorkerMessage(Object(Workerman\Connection\TcpConnection), Array)
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#2 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #41)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Gateway.php(279): Workerman\Worker->run()
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\Gateway->run()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#9 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_gateway.php(59): Workerman\Worker::runAll()
+#10 {main}
+2018-05-26 11:02:48 pid:1 Worker process terminated
+2018-05-26 11:03:01 pid:1 Exception: gateway inner pack err cmd=25 in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Gateway.php:797
+Stack trace:
+#0 [internal function]: GatewayWorker\Gateway->onWorkerMessage(Object(Workerman\Connection\TcpConnection), Array)
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\TcpConnection), Array)
+#2 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #39)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Gateway.php(279): Workerman\Worker->run()
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\Gateway->run()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#9 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_gateway.php(59): Workerman\Worker::runAll()
+#10 {main}
+2018-05-26 11:03:01 pid:1 Worker process terminated

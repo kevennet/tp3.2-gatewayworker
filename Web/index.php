@@ -1,3 +1,5 @@
+
+
 <html><head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>workerman-chat PHP聊天室 Websocket(HTLM5/Flash)+PHP多进程socket实时推送技术</title>
@@ -13,7 +15,7 @@
   <script type="text/javascript">
     if (typeof console == "undefined") {    this.console = { log: function (msg) {  } };}
     // 如果浏览器不支持websocket，会使用这个flash自动模拟websocket协议，此过程对开发者透明
-    WEB_SOCKET_SWF_LOCATION = "/swf/WebSocketMain.swf";
+    WEB_SOCKET_SWF_LOCATION = "./swf/WebSocketMain.swf";
     // 开启flash的websocket debug
     WEB_SOCKET_DEBUG = true;
     var ws, name, client_list={};
@@ -21,7 +23,7 @@
     // 连接服务端
     function connect() {
        // 创建websocket
-       ws = new WebSocket("ws://192.168.1.154:7272");
+       ws = new WebSocket('ws://'+document.domain+':7272');
        // 当socket连接打开时，输入用户名
        ws.onopen = onopen;
        // 当有消息时根据消息类型显示不同信息
@@ -43,10 +45,8 @@
             show_prompt();
         }
         // 登录
-        var login_data = '{"type":"login","client_name":"'+name.replace(/"/g, '\\"')+'","room_id":"<?php echo isset($_GET['room_id']) ? $_GET['room_id'] : 1?>"}';
+        var login_data = '{"type":"login","client_name":"'+name.replace(/"./g, '\\"')+'","room_id":"<?php echo isset($_GET['room_id']) ? $_GET['room_id'] : 1?>"}';
         console.log("websocket握手成功，发送登录数据:"+login_data);
-        var var_name=name.replace(/"/g, '\\"');
-        get_now_msg(var_name);        
         ws.send(login_data);
     }
 
@@ -58,7 +58,7 @@
         switch(data['type']){
             // 服务端ping客户端
             case 'ping':
-               // ws.send('{"type":"pong"}');
+                ws.send('{"type":"pong"}');
                 break;;
             // 登录 更新用户列表
             case 'login':
@@ -73,7 +73,8 @@
                     client_list[data['client_id']] = data['client_name']; 
                 }
                 flush_client_list();
-
+  
+                get_now_msg();
                 console.log(data['client_name']+"登录成功");
                 break;
             // 发言
@@ -97,19 +98,19 @@
             name = '游客';
         }
     }  
-    function get_now_msg(var_name){
+    function get_now_msg(){
           $.ajax({
-              url: 'http://192.168.1.160/tp3.2/index.php/Home/Index/get_msg',
+              url: 'http://'+document.domain+'/tp3.2/index.php/Home/Index/get_msg',
               type: 'POST',
               dataType: 'json',
-              data: {name: var_name},
+              data: {desc: 'id'},
             })
             .done(function(e) {
               if(e.code=='1'){
                 console.log(e);
               }
               else{
-                console.log(e);
+               alert('没有可读区数据');
               }
             })
             .fail(function(e) {
@@ -124,7 +125,7 @@
       var input = document.getElementById("textarea");
       var to_client_id = $("#client_list option:selected").attr("value");
       var to_client_name = $("#client_list option:selected").text();
-      ws.send('{"type":"say","to_client_id":"'+to_client_id+'","to_client_name":"'+to_client_name+'","content":"'+input.value.replace(/"/g, '\\"').replace(/\n/g,'\\n').replace(/\r/g, '\\r')+'"}');
+      ws.send('{"type":"say","to_client_id":"'+to_client_id+'","to_client_name":"'+to_client_name+'","content":"'+input.value.replace(/"./g, '\\"').replace(/\n/g,'\\n').replace(/\r/g, '\\r')+'"}');
       input.value = "";
       input.focus();
     }
@@ -136,12 +137,13 @@
     	userlist_window.empty();
     	client_list_slelect.empty();
     	userlist_window.append('<h4>在线用户</h4><ul>');
-    	//client_list_slelect.append('<option value="all" id="cli_all">所有人</option>');
+
+    	// client_list_slelect.append('<option value="all" id="cli_all">所有人</option>');
     	for(var p in client_list){
             userlist_window.append('<li id="'+p+'">'+client_list[p]+'</li>');
             client_list_slelect.append('<option value="'+p+'">'+client_list[p]+'</option>');
         }
-        client_list_slelect.get(1).selectedIndex;
+      client_list_slelect.get(1).selectedIndex;
     	$("#client_list").val(select_client_id);
     	userlist_window.append('</ul>');
     }
@@ -200,7 +202,8 @@
                </form>
                <div>
                &nbsp;&nbsp;&nbsp;&nbsp;<b>房间列表:</b>（当前在&nbsp;房间<?php echo isset($_GET['room_id'])&&intval($_GET['room_id'])>0 ? intval($_GET['room_id']):1; ?>）<br>
-               &nbsp;&nbsp;&nbsp;&nbsp;<a href="./?room_id=1">房间1</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./?room_id=2">房间2</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./?room_id=3">房间3</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./?room_id=5">房间5</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./?room_id=6">房间6</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./?room_id=7">房间7</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./?room_id=8">房间8</a>
+               &nbsp;&nbsp;&nbsp;&nbsp;<a href="./?room_id=1">房间1</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./?room_id=2">房间2</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./?room_id=3">房间3</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./?room_id=4">房间4</a>
+               &nbsp;&nbsp;&nbsp;&nbsp;<a href="./?room_id=5">房间5</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./?room_id=6">房间6</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./?room_id=7">房间7</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./?room_id=8">房间8</a>
                <br><br>
                </div>
                <p class="cp">PHP多进程+Websocket(HTML5/Flash)+PHP Socket实时推送技术&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://www.workerman.net/workerman-chat" target="_blank">workerman-chat</a></p>
