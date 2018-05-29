@@ -33,7 +33,7 @@ class Events
     static $manage_arr=array();
     public static function onWorkerStart($businessWorker)
     {
-        
+
        echo "WorkerStart\n";
     }
 
@@ -127,7 +127,7 @@ class Events
                     throw new \Exception("\$message_data['room_id'] not set. client_ip:{$_SERVER['REMOTE_ADDR']} \$message:$message");
                 }
                 self::$temp_int++;
-                $time=self::$temp_int;
+                $time=$message_data['bind_id']?$message_data['bind_id']:self::$temp_int;
                 Gateway::bindUid($client_id,$time);
                 // 把房间号昵称放到session中
                 $room_id = $message_data['room_id'];
