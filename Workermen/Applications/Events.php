@@ -33,6 +33,7 @@ class Events
     static $manage_arr=array();
     public static function onWorkerStart($businessWorker)
     {
+        
        echo "WorkerStart\n";
     }
 
