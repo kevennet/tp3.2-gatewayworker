@@ -8984,3 +8984,36 @@ Stack trace:
 #14 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
 #15 {main}
 2018-05-29 03:39:43 pid:1 Worker process terminated
+2018-05-29 13:47:03 pid:18407 Workerman[start.php] start in DEBUG mode
+2018-05-29 13:47:07 pid:18407 Workerman[start.php] stopping ...
+2018-05-29 13:47:07 pid:18407 Workerman[start.php] has been stopped
+2018-05-29 14:02:39 pid:18566 Workerman[start.php] start in DEBUG mode
+2018-05-29 14:04:29 pid:18568 Worker process terminated with ERROR: E_ERROR "Class 'GatewayWorker\Lib\ConfMysqli' not found in /var/www/html/tp3.2/Workermen/vendor/workerman/gateway-worker/src/Lib/Mysqli.php on line 3"
+2018-05-29 14:04:29 pid:18566 worker[ChatBusinessWorker:18568] exit with status 65280
+2018-05-29 14:04:49 pid:18587 Worker process terminated with ERROR: E_ERROR "Class 'GatewayWorker\Lib\ConfMysqli' not found in /var/www/html/tp3.2/Workermen/vendor/workerman/gateway-worker/src/Lib/Mysqli.php on line 3"
+2018-05-29 14:04:49 pid:18566 worker[ChatBusinessWorker:18587] exit with status 65280
+2018-05-29 14:05:09 pid:18588 Worker process terminated with ERROR: E_ERROR "Class 'GatewayWorker\Lib\ConfMysqli' not found in /var/www/html/tp3.2/Workermen/vendor/workerman/gateway-worker/src/Lib/Mysqli.php on line 3"
+2018-05-29 14:05:09 pid:18566 worker[ChatBusinessWorker:18588] exit with status 65280
+2018-05-29 14:05:24 pid:18569 Worker process terminated with ERROR: E_ERROR "Class 'GatewayWorker\Lib\ConfMysqli' not found in /var/www/html/tp3.2/Workermen/vendor/workerman/gateway-worker/src/Lib/Mysqli.php on line 3"
+2018-05-29 14:05:24 pid:18566 worker[ChatBusinessWorker:18569] exit with status 65280
+2018-05-29 14:05:26 pid:18566 Workerman[start.php] stopping ...
+2018-05-29 14:05:26 pid:18566 Workerman[start.php] has been stopped
+2018-05-29 14:05:31 pid:18591 Workerman[start.php] start in DEBUG mode
+2018-05-29 14:05:31 pid:18594 Worker process terminated with ERROR: E_ERROR "Class 'GatewayWorker\Lib\ConfMysqli' not found in /var/www/html/tp3.2/Workermen/vendor/workerman/gateway-worker/src/Lib/Mysqli.php on line 3"
+2018-05-29 14:05:31 pid:18591 worker[ChatBusinessWorker:18594] exit with status 65280
+2018-05-29 14:05:51 pid:18603 Worker process terminated with ERROR: E_ERROR "Class 'GatewayWorker\Lib\ConfMysqli' not found in /var/www/html/tp3.2/Workermen/vendor/workerman/gateway-worker/src/Lib/Mysqli.php on line 3"
+2018-05-29 14:05:51 pid:18591 worker[ChatBusinessWorker:18603] exit with status 65280
+2018-05-29 14:06:11 pid:18604 Worker process terminated with ERROR: E_ERROR "Class 'GatewayWorker\Lib\ConfMysqli' not found in /var/www/html/tp3.2/Workermen/vendor/workerman/gateway-worker/src/Lib/Mysqli.php on line 3"
+2018-05-29 14:06:11 pid:18591 worker[ChatBusinessWorker:18604] exit with status 65280
+2018-05-29 14:06:31 pid:18605 Worker process terminated with ERROR: E_ERROR "Class 'GatewayWorker\Lib\ConfMysqli' not found in /var/www/html/tp3.2/Workermen/vendor/workerman/gateway-worker/src/Lib/Mysqli.php on line 3"
+2018-05-29 14:06:31 pid:18591 worker[ChatBusinessWorker:18605] exit with status 65280
+2018-05-29 14:06:49 pid:18591 Workerman[start.php] stopping ...
+2018-05-29 14:06:49 pid:18591 Workerman[start.php] has been stopped
+2018-05-29 14:06:50 pid:18607 Workerman[start.php] start in DEBUG mode
+2018-05-29 14:25:04 pid:18607 Workerman[start.php] stopping ...
+2018-05-29 14:25:04 pid:18613 SendBufferToWorker fail. May be the send buffer are overflow. See http://wiki.workerman.net/Error2 for detail
+2018-05-29 14:25:04 pid:18613 SendBufferToWorker fail. The connections between Gateway and BusinessWorker are not ready. See http://wiki.workerman.net/Error3 for detail
+2018-05-29 14:25:04 pid:18607 Workerman[start.php] has been stopped
+2018-05-29 14:25:06 pid:18687 Workerman[start.php] start in DEBUG mode
+2018-05-29 15:07:19 pid:18687 Workerman[start.php] stopping ...
+2018-05-29 15:07:19 pid:18687 Workerman[start.php] has been stopped
