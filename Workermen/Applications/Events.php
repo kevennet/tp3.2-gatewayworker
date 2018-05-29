@@ -25,12 +25,15 @@
  */
 use \GatewayWorker\Lib\Gateway;
 use \GatewayWorker\Lib\Mysqli;
+use \GatewayWorker\Lib\ConfMysqli;
+
 class Events
 {
     static $temp_int=0;
+    static $manage_arr=array();
     public static function onWorkerStart($businessWorker)
     {
-       //echo "WorkerStart\n";
+       echo "WorkerStart\n";
     }
 
     /**

@@ -137,9 +137,8 @@ public function close_conn(){
 /*
 *扩展函数
 *arrayToInsertSql($array,$table_name)
-
 *$aray:为$row=>$fields=>$value二维数组，$row>1,将该二维数组转化成sql语句，执行该sql语句即可将该数组插入到数据库中
-
+*@DateTime:    [2018-05-29 14:14:46]
 */
 public function arrayToInsertSql($array,$table_name){
 		$sql = '';
