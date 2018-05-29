@@ -24,7 +24,7 @@
  * 主要是处理 onMessage onClose 
  */
 use \GatewayWorker\Lib\Gateway;
-
+use \GatewayWorker\Lib\Mysqli;
 class Events
 {
     static $temp_int=0;
@@ -68,6 +68,8 @@ class Events
    public static function onMessage($client_id, $message)
    {    
         
+        $conn=new Mysqli();
+
         $manage_arr=array(
             'xiao_ming',
             'manage_a',
@@ -75,14 +77,14 @@ class Events
 
 
 
-         $debug_state=0;
+         $debug_state=1;
         // debug
         if($debug_state==0){
             //echo "client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id session:".json_encode($_SESSION)." onMessage:".$message."\n";
         }
         if($debug_state>0){
             $html="client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id session:".json_encode($_SESSION)." onMessage:".$message;
-            $conn = mysqli_connect('localhost','root', '' ,'test');
+            //$conn = mysqli_connect('localhost','root', '' ,'test');
             $client_id=$client_id;
             $server_ip=$_SERVER['REMOTE_ADDR'];
             $onmessage=$message;
@@ -100,8 +102,17 @@ class Events
             // 客户端回应服务端的心跳
             case 'pong':
                 if($debug_state>0){
-                    $sql="INSERT INTO `bm_message`  (`client_id`,`server_ip` ,`onmessage` ,`msg` ,`type`,`client_name`,`room_id`) VALUES('".$client_id."','".$server_ip."','".$onmessage."','".$msg."','pong','".$_SESSION['client_name']."','".$_SESSION['room_id']."');";
-                    $res=$conn->query($sql);
+                    $insert_arr=array(
+                                'client_id'=>$client_id,
+                                'server_ip'=>$server_ip,
+                                'onmessage'=>$onmessage,
+                                'msg'=>$msg,
+                                'type'=>$message_data['type'],
+                                'client_name'=>$_SESSION['client_name'],
+                                'room_id'=>$_SESSION['room_id'],
+                                );
+                    //$res=$conn->arrayToInsertSql($insert_arr,'bm_message');
+
                 }
                 return;
             // 客户端登录 message格式: {type:login, name:xx, room_id:1} ，添加到客户端，广播给所有客户端xx进入聊天室
@@ -124,7 +135,6 @@ class Events
                 if(count($now_client)>0){
                     foreach ($now_client as $key_client_list => $value_client_list) {
                         if(isset($value_client_list['client_name'])){
-                            //var_dump($value_client_list['client_name']);
                             if($value_client_list['client_name'] == $client_name && $key_client_list<$client_id){
                                 $new_message=array(
                                     'type'=>'login_out', 
@@ -132,12 +142,9 @@ class Events
                                     'client_name'=>htmlspecialchars($client_name), 
                                     'time'=>date('Y-m-d H:i:s')
                                 );
-                                var_dump(array(
-                                    $key_client_list,
-                                    json_encode($new_message)
-                                ));
-                                Gateway::closeClient($key_client_list);
                                 Gateway::sendToClient($key_client_list, json_encode($new_message));
+                                Gateway::closeClient($key_client_list);
+
                             }
                         }
                     }
@@ -187,8 +194,20 @@ class Events
                 $new_message['client_list'] = $clients_list;
                 Gateway::sendToCurrentClient(json_encode($new_message));
                 if($debug_state>0){
-                    $sql="INSERT INTO `bm_message`  (`client_id`,`server_ip` ,`onmessage` ,`msg` ,`type`,`client_name`,`room_id`) VALUES('".$client_id."','".$server_ip."','".$onmessage."','".$msg."','login','".$_SESSION['client_name']."','".$_SESSION['room_id']."');";
-                    $res=$conn->query($sql);
+                    $insert_arr=array(
+                                'client_id'=>$client_id,
+                                'server_ip'=>$server_ip,
+                                'onmessage'=>$onmessage,
+                                'msg'=>$msg,
+                                'type'=>$message_data['type'],
+                                'client_name'=>$_SESSION['client_name'],
+                                'room_id'=>$_SESSION['room_id'],
+                                );
+                    /**
+                     * 登陆数据记录
+                     */
+                    //$res=$conn->arrayToInsertSql($insert_arr,'bm_message');
+
                 }
                 return;
                 
@@ -202,8 +221,18 @@ class Events
                 $room_id = $_SESSION['room_id'];
                 $client_name = $_SESSION['client_name'];
                 if($debug_state>0){
-                    $sql="INSERT INTO `bm_message`  (`client_id`,`server_ip` ,`onmessage` ,`msg` ,`type`,`client_name`,`room_id`) VALUES('".$client_id."','".$server_ip."','".$onmessage."','".$msg."','say','".$_SESSION['client_name']."','".$_SESSION['room_id']."');";
-                    $res=$conn->query($sql);
+                    $insert_arr=array(
+                                'client_id'=>$client_id,
+                                'server_ip'=>$server_ip,
+                                'onmessage'=>$onmessage,
+                                'msg'=>$msg,
+                                'type'=>$message_data['type'],
+                                'client_name'=>$_SESSION['client_name'],
+                                'room_id'=>$_SESSION['room_id'],
+                                'to_client_name'=>$message_data['to_client_name']
+                                );
+                    $res=$conn->arrayToInsertSql($insert_arr,'bm_message');
+
                 }
                 // 私聊
                 if($message_data['to_client_id'] != 'all')

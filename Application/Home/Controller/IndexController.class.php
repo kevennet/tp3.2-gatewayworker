@@ -57,7 +57,6 @@ class IndexController extends Controller  {
     public function index4(){
         dump(Gateway::getAllClientSessions());
         dump(Gateway::getClientSessionsByGroup(8));
-        dump(Gateway::getClientSessionsByGroup(7));
     }
 
 }

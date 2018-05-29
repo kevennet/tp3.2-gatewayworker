@@ -8275,3 +8275,712 @@ Stack trace:
 #9 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_gateway.php(59): Workerman\Worker::runAll()
 #10 {main}
 2018-05-28 04:50:21 pid:1 Worker process terminated
+2018-05-28 09:15:21 pid:1 Error: Class 'Config\Db' not found in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Db.php:40
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(79): GatewayWorker\Lib\Db::instance(Array)
+#1 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#11 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#12 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-05-28 09:15:21 pid:1 Worker process terminated
+2018-05-28 09:15:39 pid:1 Error: Class 'Config\Db' not found in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Db.php:40
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(79): GatewayWorker\Lib\Db::instance(Array)
+#1 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#11 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#12 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-05-28 09:15:39 pid:1 Worker process terminated
+2018-05-28 09:15:59 pid:1 Error: Class 'Config\Db' not found in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Db.php:40
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(79): GatewayWorker\Lib\Db::instance(Array)
+#1 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#3 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#5 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#11 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#12 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#13 {main}
+2018-05-28 09:15:59 pid:1 Worker process terminated
+2018-05-28 09:16:17 pid:1 Error: Class 'DbConfig' not found in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:78
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#11 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#12 {main}
+2018-05-28 09:16:17 pid:1 Worker process terminated
+2018-05-28 09:16:33 pid:1 Error: Class 'DbConfig' not found in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:78
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#11 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#12 {main}
+2018-05-28 09:16:33 pid:1 Worker process terminated
+2018-05-28 09:22:17 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Namespace declaration statement has to be the very first statement or after any declare call in the script in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php on line 3"
+2018-05-28 09:22:26 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Namespace declaration statement has to be the very first statement or after any declare call in the script in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php on line 3"
+2018-05-28 09:22:34 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Namespace declaration statement has to be the very first statement or after any declare call in the script in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php on line 3"
+2018-05-28 09:22:36 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Namespace declaration statement has to be the very first statement or after any declare call in the script in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php on line 3"
+2018-05-28 09:22:37 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Namespace declaration statement has to be the very first statement or after any declare call in the script in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php on line 3"
+2018-05-28 09:22:47 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Namespace declaration statement has to be the very first statement or after any declare call in the script in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php on line 3"
+2018-05-28 09:22:57 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Namespace declaration statement has to be the very first statement or after any declare call in the script in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php on line 3"
+2018-05-28 09:23:07 pid:1 Worker process terminated with ERROR: E_COMPILE_ERROR "Namespace declaration statement has to be the very first statement or after any declare call in the script in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php on line 3"
+2018-05-28 09:54:07 pid:1 Error: Call to undefined method mysqli::get_Rows_Array() in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:79
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#11 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#12 {main}
+2018-05-28 09:54:07 pid:1 Worker process terminated
+2018-05-28 09:54:20 pid:1 Error: Call to undefined method mysqli::get_Rows_Array() in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:79
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#11 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#12 {main}
+2018-05-28 09:54:20 pid:1 Worker process terminated
+2018-05-28 09:54:40 pid:1 Error: Call to undefined method mysqli::get_Rows_Array() in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:79
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#11 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#12 {main}
+2018-05-28 09:54:40 pid:1 Worker process terminated
+2018-05-28 09:55:00 pid:1 Error: Call to undefined method mysqli::get_Rows_Array() in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:79
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#11 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#12 {main}
+2018-05-28 09:55:00 pid:1 Worker process terminated
+2018-05-28 09:55:11 pid:1 ParseError: syntax error, unexpected '(', expecting '{' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:3
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:55:11 pid:1 Worker process terminated
+2018-05-28 09:55:27 pid:1 ParseError: syntax error, unexpected '(', expecting '{' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:3
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:55:27 pid:1 Worker process terminated
+2018-05-28 09:55:47 pid:1 ParseError: syntax error, unexpected '(', expecting '{' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:3
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:55:47 pid:1 Worker process terminated
+2018-05-28 09:56:06 pid:1 ParseError: syntax error, unexpected '(', expecting '{' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:3
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:56:06 pid:1 Worker process terminated
+2018-05-28 09:56:22 pid:1 ParseError: syntax error, unexpected '(', expecting '{' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:3
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:56:22 pid:1 Worker process terminated
+2018-05-28 09:56:42 pid:1 ParseError: syntax error, unexpected '(', expecting '{' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:3
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:56:42 pid:1 Worker process terminated
+2018-05-28 09:56:54 pid:1 ParseError: syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:31
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:56:54 pid:1 Worker process terminated
+2018-05-28 09:57:02 pid:1 ParseError: syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:31
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:57:02 pid:1 Worker process terminated
+2018-05-28 09:57:19 pid:1 ParseError: syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:31
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:57:19 pid:1 Worker process terminated
+2018-05-28 09:57:39 pid:1 ParseError: syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:31
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:57:39 pid:1 Worker process terminated
+2018-05-28 09:57:56 pid:1 ParseError: syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:31
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:57:56 pid:1 Worker process terminated
+2018-05-28 09:58:15 pid:1 ParseError: syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:31
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:58:15 pid:1 Worker process terminated
+2018-05-28 09:58:35 pid:1 ParseError: syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:31
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:58:35 pid:1 Worker process terminated
+2018-05-28 09:58:55 pid:1 ParseError: syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:31
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:58:55 pid:1 Worker process terminated
+2018-05-28 09:59:15 pid:1 ParseError: syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:31
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:59:15 pid:1 Worker process terminated
+2018-05-28 09:59:35 pid:1 ParseError: syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:31
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:59:35 pid:1 Worker process terminated
+2018-05-28 09:59:55 pid:1 ParseError: syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:31
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 09:59:55 pid:1 Worker process terminated
+2018-05-28 10:00:15 pid:1 ParseError: syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Confmysqli.php:31
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php(3): spl_autoload_call('GatewayWorker\\L...')
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(444): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#5 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#6 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#7 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#9 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#11 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#14 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#15 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#16 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#17 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#18 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#19 {main}
+2018-05-28 10:00:15 pid:1 Worker process terminated
+2018-05-28 10:00:58 pid:1 Worker process terminated
+2018-05-28 10:01:42 pid:1 Worker process terminated
+2018-05-28 10:01:57 pid:1 Worker process terminated
+2018-05-28 10:02:15 pid:1 Worker process terminated
+2018-05-28 10:02:36 pid:1 Worker process terminated
+2018-05-28 10:02:53 pid:1 Worker process terminated
+2018-05-28 10:03:00 pid:1 Worker process terminated
+2018-05-28 10:03:10 pid:1 Worker process terminated
+2018-05-28 10:11:48 pid:1 ParseError: syntax error, unexpected '=', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:107
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('Events')
+#1 [internal function]: spl_autoload_call('Events')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(210): is_callable('Events::onWorke...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2115): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#9 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#10 {main}
+2018-05-28 10:11:49 pid:1 Worker process terminated
+2018-05-28 10:11:49 pid:1 ParseError: syntax error, unexpected '=', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:107
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('Events')
+#1 [internal function]: spl_autoload_call('Events')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(210): is_callable('Events::onWorke...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2115): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#9 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#10 {main}
+2018-05-28 10:11:50 pid:1 Worker process terminated
+2018-05-28 10:11:51 pid:1 ParseError: syntax error, unexpected '=', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:107
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('Events')
+#1 [internal function]: spl_autoload_call('Events')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(210): is_callable('Events::onWorke...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2115): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#9 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#10 {main}
+2018-05-28 10:11:52 pid:1 Worker process terminated
+2018-05-28 10:11:52 pid:1 ParseError: syntax error, unexpected '=', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:107
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('Events')
+#1 [internal function]: spl_autoload_call('Events')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(210): is_callable('Events::onWorke...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2115): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#9 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#10 {main}
+2018-05-28 10:11:53 pid:1 Worker process terminated
+2018-05-28 10:11:54 pid:1 ParseError: syntax error, unexpected '=', expecting ')' in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:107
+Stack trace:
+#0 [internal function]: Workerman\Autoloader::loadByNamespace('Events')
+#1 [internal function]: spl_autoload_call('Events')
+#2 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(210): is_callable('Events::onWorke...')
+#3 [internal function]: GatewayWorker\BusinessWorker->onWorkerStart(Object(GatewayWorker\BusinessWorker))
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2115): call_user_func(Array, Object(GatewayWorker\BusinessWorker))
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#9 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#10 {main}
+2018-05-28 10:13:31 pid:1 Worker process terminated
+2018-05-28 10:13:47 pid:1 Worker process terminated
+2018-05-28 10:14:16 pid:1 Worker process terminated
+2018-05-28 10:14:33 pid:1 Worker process terminated
+2018-05-28 10:14:42 pid:1 Worker process terminated
+2018-05-28 10:14:59 pid:1 Worker process terminated
+2018-05-29 03:39:28 pid:1 ParseError: syntax error, unexpected ')' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php:163
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#3 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#5 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#11 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#14 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#15 {main}
+2018-05-29 03:39:28 pid:1 Worker process terminated
+2018-05-29 03:39:30 pid:1 ParseError: syntax error, unexpected ')' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php:163
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#3 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#5 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#11 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#14 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#15 {main}
+2018-05-29 03:39:30 pid:1 Worker process terminated
+2018-05-29 03:39:43 pid:1 ParseError: syntax error, unexpected ')' in D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\Lib\Mysqli.php:163
+Stack trace:
+#0 D:\xampp\htdocs\tp3.2\Workermen\vendor\composer\ClassLoader.php(322): Composer\Autoload\includeFile('D:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('GatewayWorker\\L...')
+#2 D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php(71): spl_autoload_call('GatewayWorker\\L...')
+#3 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"pong"}')
+#4 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"pong"}')
+#5 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#7 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#11 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#12 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#13 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#14 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#15 {main}
+2018-05-29 03:39:43 pid:1 Worker process terminated
