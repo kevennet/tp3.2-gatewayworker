@@ -31,6 +31,7 @@ class Events
 {
     static $temp_int=0;
     static $manage_arr=array();
+    static $redis;
     public static function onWorkerStart($businessWorker)
     {
 
@@ -54,8 +55,10 @@ class Events
      * @return [type]            [description]
      */
     public static function onWebSocketConnect($client_id, $data)
-    {
-        //var_export($data);
+    {   
+        self::$redis= new Redis() or die("Cannot load Redis module.");
+        self::$redis->connect('127.0.0.1',6379);
+
 
     }
 
@@ -121,6 +124,7 @@ class Events
                 return;
             // 客户端登录 message格式: {type:login, name:xx, room_id:1} ，添加到客户端，广播给所有客户端xx进入聊天室
             case 'login':
+                $redis->set(self::$temp_int, $_SESSION['client_name']);
                 // 判断是否有房间号
                 if(!isset($message_data['room_id']))
                 {
