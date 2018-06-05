@@ -56,8 +56,8 @@ class Events
      */
     public static function onWebSocketConnect($client_id, $data)
     {   
-        self::$redis= new Redis() or die("Cannot load Redis module.");
-        self::$redis->connect('127.0.0.1',6379);
+        // self::$redis= new Redis() or die("Cannot load Redis module.");
+        // self::$redis->connect('127.0.0.1',6379);
 
 
     }
@@ -85,7 +85,6 @@ class Events
 
 
          $debug_state=1;
-        // debug
         if($debug_state==0){
             //echo "client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id session:".json_encode($_SESSION)." onMessage:".$message."\n";
         }
@@ -124,14 +123,14 @@ class Events
                 return;
             // 客户端登录 message格式: {type:login, name:xx, room_id:1} ，添加到客户端，广播给所有客户端xx进入聊天室
             case 'login':
-                $redis->set(self::$temp_int, $_SESSION['client_name']);
+                // $redis->set(self::$temp_int, $_SESSION['client_name']);
                 // 判断是否有房间号
                 if(!isset($message_data['room_id']))
                 {
                     throw new \Exception("\$message_data['room_id'] not set. client_ip:{$_SERVER['REMOTE_ADDR']} \$message:$message");
                 }
                 self::$temp_int++;
-                $time=$message_data['bind_id']?$message_data['bind_id']:self::$temp_int;
+                $time=self::$temp_int;
                 Gateway::bindUid($client_id,$time);
                 // 把房间号昵称放到session中
                 $room_id = $message_data['room_id'];

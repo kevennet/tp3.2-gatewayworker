@@ -9017,3 +9017,103 @@ Stack trace:
 2018-05-29 14:25:06 pid:18687 Workerman[start.php] start in DEBUG mode
 2018-05-29 15:07:19 pid:18687 Workerman[start.php] stopping ...
 2018-05-29 15:07:19 pid:18687 Workerman[start.php] has been stopped
+2018-06-04 12:06:38 pid:1 Error: Call to a member function set() on null in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:127
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#11 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#12 {main}
+2018-06-04 12:06:38 pid:1 Worker process terminated
+2018-06-04 12:06:46 pid:1 Error: Call to a member function set() on null in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:127
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#11 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#12 {main}
+2018-06-04 12:06:46 pid:1 Worker process terminated
+2018-06-04 12:06:52 pid:1 Error: Call to a member function set() on null in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:127
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#11 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#12 {main}
+2018-06-04 12:06:52 pid:1 Worker process terminated
+2018-06-04 12:09:50 pid:1 Error: Call to a member function set() on null in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:126
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#11 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#12 {main}
+2018-06-04 12:09:50 pid:1 Worker process terminated
+2018-06-04 12:09:57 pid:1 Error: Call to a member function set() on null in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:126
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#11 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#12 {main}
+2018-06-04 12:09:57 pid:1 Worker process terminated
+2018-06-04 12:10:02 pid:1 Error: Call to a member function set() on null in D:\xampp\htdocs\tp3.2\Workermen\Applications\Events.php:126
+Stack trace:
+#0 [internal function]: Events::onMessage('7f00000108fc000...', '{"type":"login"...')
+#1 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(384): call_user_func('Events::onMessa...', '7f00000108fc000...', '{"type":"login"...')
+#2 [internal function]: GatewayWorker\BusinessWorker->onGatewayMessage(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#3 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Connection\TcpConnection.php(639): call_user_func(Array, Object(Workerman\Connection\AsyncTcpConnection), Array)
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #26)
+#5 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Events\Select.php(286): call_user_func_array(Array, Array)
+#6 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(2130): Workerman\Events\Select->loop()
+#7 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\gateway-worker\src\BusinessWorker.php(190): Workerman\Worker->run()
+#8 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1189): GatewayWorker\BusinessWorker->run()
+#9 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(1132): Workerman\Worker::forkWorkersForWindows()
+#10 D:\xampp\htdocs\tp3.2\Workermen\vendor\workerman\workerman\Worker.php(466): Workerman\Worker::forkWorkers()
+#11 D:\xampp\htdocs\tp3.2\Workermen\Applications\start_businessworker.php(32): Workerman\Worker::runAll()
+#12 {main}
+2018-06-04 12:10:02 pid:1 Worker process terminated
+2018-06-04 12:11:56 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2018-06-04 12:11:57 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2018-06-04 12:11:58 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2018-06-04 12:11:59 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
