@@ -123,7 +123,6 @@ class Events
                         }
                         return;
                     case 'login':
-                        echo $_SERVER['GATEWAY_PORT'];
                         if(!isset($message_data['room_id']))
                         {
                             throw new \Exception("\$message_data['room_id'] not set. client_ip:{$_SERVER['REMOTE_ADDR']} \$message:$message");
@@ -265,6 +264,7 @@ class Events
                 break;
             case '7878':
                 echo 7878;
+                break;
         }
    }
    
