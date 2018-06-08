@@ -27,7 +27,7 @@ use \GatewayWorker\Lib\Gateway;
 use \GatewayWorker\Lib\Mysqli;
 use \GatewayWorker\Lib\ConfMysqli;
 
-class Events
+class push
 {
     static $temp_int=0;
     static $manage_arr=array();
