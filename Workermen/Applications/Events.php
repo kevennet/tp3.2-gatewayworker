@@ -35,7 +35,7 @@ class Events
     public static function onWorkerStart($businessWorker)
     {
 
-       echo "WorkerStart\n";
+    //   echo "WorkerStart\n";
     }
 
     /**
