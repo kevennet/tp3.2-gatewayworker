@@ -9117,3 +9117,15 @@ Stack trace:
 2018-06-04 12:11:57 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
 2018-06-04 12:11:58 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
 2018-06-04 12:11:59 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2018-06-08 10:58:47 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2018-06-08 10:58:47 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2018-06-08 10:58:48 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2018-06-08 10:58:48 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2018-06-08 10:58:49 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2018-06-08 10:58:49 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2018-06-08 10:58:50 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2018-06-08 10:58:50 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2018-06-08 10:58:51 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2018-06-08 10:58:51 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2018-06-08 10:58:52 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2018-06-08 10:58:52 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0

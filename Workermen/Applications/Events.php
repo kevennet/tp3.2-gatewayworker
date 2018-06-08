@@ -101,6 +101,12 @@ class Events
             return ;
         }
         switch($_SERVER['GATEWAY_PORT']){
+            /*****************************绑定操作*****************************************/
+            case '7777':
+                    Gateway::bindUid($client_id,$message_data['u_id']);
+                break;
+            /******************************绑定操作****************************************/
+            /****************************************聊   天     层*********************************************************/
             case '7272':
                 /**
                  * 选择业务类型（聊天）
@@ -127,9 +133,6 @@ class Events
                         {
                             throw new \Exception("\$message_data['room_id'] not set. client_ip:{$_SERVER['REMOTE_ADDR']} \$message:$message");
                         }
-                        self::$temp_int++;
-                        $time=self::$temp_int;
-                        Gateway::bindUid($client_id,$time);
                         $room_id = $message_data['room_id'];
                         $client_name = htmlspecialchars($message_data['client_name']);
                         $_SESSION['room_id'] = $room_id;
@@ -262,9 +265,24 @@ class Events
                         return Gateway::sendToGroup($room_id ,json_encode($new_message));
                 }
                 break;
+            /********************************************聊   天     层*****************************************************/
+            /****************************页面控制******************************************/
             case '7878':
                 echo 7878;
                 break;
+            /*****************************页面控制*****************************************/
+            /****************************有新的消息******************************************/
+            case '7979':
+                $return_message = array(
+                    'type'=>'tip',
+                    'from_client_id'=>$client_id, 
+                    'from_client_name' =>'syaytem',
+                    'to_client_uid'=>$get_messag_uid,
+                    'time'=>date('Y-m-d H:i:s'),
+                );
+                Gateway::sendToUid($message_data['to_client_uid'], json_encode($return_message));
+                break;
+            /*****************************有新的消息*****************************************/
         }
    }
    
