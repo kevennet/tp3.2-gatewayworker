@@ -123,6 +123,7 @@ class Events
                 return;
             // 客户端登录 message格式: {type:login, name:xx, room_id:1} ，添加到客户端，广播给所有客户端xx进入聊天室
             case 'login':
+                echo $_SERVER['GATEWAY_PORT'];
                 // $redis->set(self::$temp_int, $_SESSION['client_name']);
                 // 判断是否有房间号
                 if(!isset($message_data['room_id']))
