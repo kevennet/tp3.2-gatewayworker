@@ -220,7 +220,6 @@ class Events
                 
             // 客户端发言 message: {type:say, to_client_id:xx, content:xx}
             case 'say':
-                var_dump($_SERVER);
                 // 非法请求
                 if(!isset($_SESSION['room_id']))
                 {
