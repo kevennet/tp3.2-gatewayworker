@@ -90,183 +90,181 @@ class Events
         }
         if($debug_state>0){
             $html="client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id session:".json_encode($_SESSION)." onMessage:".$message;
-            //$conn = mysqli_connect('localhost','root', '' ,'test');
             $client_id=$client_id;
             $server_ip=$_SERVER['REMOTE_ADDR'];
             $onmessage=$message;
             $msg=$html;
         }
-        // 客户端传递的是json数据
         $message_data = json_decode($message, true);
         if(!$message_data)
         {
             return ;
         }
-        // 根据类型执行不同的业务
-        switch($message_data['type'])
-        {
-            // 客户端回应服务端的心跳
-            case 'pong':
-                if($debug_state>0){
-                    $insert_arr=array(
-                                'client_id'=>$client_id,
-                                'server_ip'=>$server_ip,
-                                'onmessage'=>$onmessage,
-                                'msg'=>$msg,
-                                'type'=>$message_data['type'],
-                                'client_name'=>$_SESSION['client_name'],
-                                'room_id'=>$_SESSION['room_id'],
-                                );
-                    //$res=$conn->arrayToInsertSql($insert_arr,'bm_message');
-
-                }
-                return;
-            // 客户端登录 message格式: {type:login, name:xx, room_id:1} ，添加到客户端，广播给所有客户端xx进入聊天室
-            case 'login':
-                echo $_SERVER['GATEWAY_PORT'];
-                // $redis->set(self::$temp_int, $_SESSION['client_name']);
-                // 判断是否有房间号
-                if(!isset($message_data['room_id']))
+        switch($_SERVER['GATEWAY_PORT']){
+            case '7272':
+                /**
+                 * 选择业务类型（聊天）
+                 * @DateTime:    [2018-06-08 17:11:20]
+                 */
+                switch($message_data['type'])
                 {
-                    throw new \Exception("\$message_data['room_id'] not set. client_ip:{$_SERVER['REMOTE_ADDR']} \$message:$message");
-                }
-                self::$temp_int++;
-                $time=self::$temp_int;
-                Gateway::bindUid($client_id,$time);
-                // 把房间号昵称放到session中
-                $room_id = $message_data['room_id'];
-                $client_name = htmlspecialchars($message_data['client_name']);
-                $_SESSION['room_id'] = $room_id;
-                $_SESSION['client_name'] = $client_name;
-                /************************如果client_name已经登陆则告诉客户端这个人已经登陆了，客户端发请求断开这个链接***************************/
-                $now_client=Gateway::getAllClientSessions();
-                if(count($now_client)>0){
-                    foreach ($now_client as $key_client_list => $value_client_list) {
-                        if(isset($value_client_list['client_name'])){
-                            if($value_client_list['client_name'] == $client_name && $key_client_list<$client_id){
-                                $new_message=array(
-                                    'type'=>'login_out', 
-                                    'client_id'=>$key_client_list, 
-                                    'client_name'=>htmlspecialchars($client_name), 
-                                    'time'=>date('Y-m-d H:i:s')
-                                );
-                                Gateway::sendToClient($key_client_list, json_encode($new_message));
-                                Gateway::closeClient($key_client_list);
+                    case 'pong':
+                        if($debug_state>0){
+                            $insert_arr=array(
+                                        'client_id'=>$client_id,
+                                        'server_ip'=>$server_ip,
+                                        'onmessage'=>$onmessage,
+                                        'msg'=>$msg,
+                                        'type'=>$message_data['type'],
+                                        'client_name'=>$_SESSION['client_name'],
+                                        'room_id'=>$_SESSION['room_id'],
+                                        );
 
+                        }
+                        return;
+                    case 'login':
+                        echo $_SERVER['GATEWAY_PORT'];
+                        if(!isset($message_data['room_id']))
+                        {
+                            throw new \Exception("\$message_data['room_id'] not set. client_ip:{$_SERVER['REMOTE_ADDR']} \$message:$message");
+                        }
+                        self::$temp_int++;
+                        $time=self::$temp_int;
+                        Gateway::bindUid($client_id,$time);
+                        $room_id = $message_data['room_id'];
+                        $client_name = htmlspecialchars($message_data['client_name']);
+                        $_SESSION['room_id'] = $room_id;
+                        $_SESSION['client_name'] = $client_name;
+                        /************************如果client_name已经登陆则告诉客户端这个人已经登陆了，客户端发请求断开这个链接***************************/
+                        $now_client=Gateway::getAllClientSessions();
+                        if(count($now_client)>0){
+                            foreach ($now_client as $key_client_list => $value_client_list) {
+                                if(isset($value_client_list['client_name'])){
+                                    if($value_client_list['client_name'] == $client_name && $key_client_list<$client_id){
+                                        $new_message=array(
+                                            'type'=>'login_out', 
+                                            'client_id'=>$key_client_list, 
+                                            'client_name'=>htmlspecialchars($client_name), 
+                                            'time'=>date('Y-m-d H:i:s')
+                                        );
+                                        Gateway::sendToClient($key_client_list, json_encode($new_message));
+                                        Gateway::closeClient($key_client_list);
+
+                                    }
+                                }
                             }
                         }
-                    }
-                }
-                /*********************如果client_name已经登陆则告诉客户端这个人已经登陆了，客户端发请求断开这个链接******************************/
+                        /*********************如果client_name已经登陆则告诉客户端这个人已经登陆了，客户端发请求断开这个链接******************************/
 
-                // 获取房间内所有用户列表 
-                $clients_list = Gateway::getClientSessionsByGroup($room_id);
-                $temp_clients_list=$clients_list;
-                foreach($clients_list as $tmp_client_id=>$item)
-                {
-                    $clients_list[$tmp_client_id] = $item['client_name'];
-                }
-                $clients_list[$client_id] = $client_name;
-                foreach ($clients_list as $key => $value) {
-                    if(in_array($_SESSION['client_name'],$manage_arr)){
-                        if(in_array($value,$manage_arr)){
-                             unset($clients_list[$key]);
+                        $clients_list = Gateway::getClientSessionsByGroup($room_id);
+                        $temp_clients_list=$clients_list;
+                        foreach($clients_list as $tmp_client_id=>$item)
+                        {
+                            $clients_list[$tmp_client_id] = $item['client_name'];
                         }
-                    }
-                    else{
-                        if(!in_array($value,$manage_arr)){
-                             unset($clients_list[$key]);
+                        $clients_list[$client_id] = $client_name;
+                        foreach ($clients_list as $key => $value) {
+                            if(in_array($_SESSION['client_name'],$manage_arr)){
+                                if(in_array($value,$manage_arr)){
+                                     unset($clients_list[$key]);
+                                }
+                            }
+                            else{
+                                if(!in_array($value,$manage_arr)){
+                                     unset($clients_list[$key]);
+                                }
+                            }
                         }
-                    }
-                }
-                // 转播给当前房间的所有客户端，xx进入聊天室 message {type:login, client_id:xx, name:xx} 
-                $new_message = array('type'=>$message_data['type'], 'client_id'=>$client_id, 'client_name'=>htmlspecialchars($client_name), 'time'=>date('Y-m-d H:i:s'));
-                /*****************************屏蔽全局聊天**************************************/
-                if(in_array($_SESSION['client_name'],$manage_arr)){
-                    Gateway::sendToGroup($room_id, json_encode($new_message));
-                }
-                else{
-                     $return_arr=array();
+                        $new_message = array('type'=>$message_data['type'], 'client_id'=>$client_id, 'client_name'=>htmlspecialchars($client_name), 'time'=>date('Y-m-d H:i:s'));
+                        /*****************************屏蔽全局聊天**************************************/
+                        if(in_array($_SESSION['client_name'],$manage_arr)){
+                            Gateway::sendToGroup($room_id, json_encode($new_message));
+                        }
+                        else{
+                             $return_arr=array();
 
-                     foreach ($temp_clients_list as $key => $value) {
-                         if(!in_array($value['client_name'],$manage_arr)){
-                             array_push($return_arr,$key);
-                         }
-                     }
-                     Gateway::sendToGroup($room_id, json_encode($new_message),$return_arr);
-                     $return_arr=array();
-                }
-                /******************************屏蔽全局聊天*************************************/
-                Gateway::joinGroup($client_id, $room_id);
-                // 给当前用户发送用户列表 
-                $new_message['client_list'] = $clients_list;
-                Gateway::sendToCurrentClient(json_encode($new_message));
-                if($debug_state>0){
-                    $insert_arr=array(
-                                'client_id'=>$client_id,
-                                'server_ip'=>$server_ip,
-                                'onmessage'=>$onmessage,
-                                'msg'=>$msg,
-                                'type'=>$message_data['type'],
-                                'client_name'=>$_SESSION['client_name'],
-                                'room_id'=>$_SESSION['room_id'],
-                                );
-                    /**
-                     * 登陆数据记录
-                     */
-                    //$res=$conn->arrayToInsertSql($insert_arr,'bm_message');
+                             foreach ($temp_clients_list as $key => $value) {
+                                 if(!in_array($value['client_name'],$manage_arr)){
+                                     array_push($return_arr,$key);
+                                 }
+                             }
+                             Gateway::sendToGroup($room_id, json_encode($new_message),$return_arr);
+                             $return_arr=array();
+                        }
+                        /******************************屏蔽全局聊天*************************************/
+                        Gateway::joinGroup($client_id, $room_id);
+                        $new_message['client_list'] = $clients_list;
+                        Gateway::sendToCurrentClient(json_encode($new_message));
+                        if($debug_state>0){
+                            $insert_arr=array(
+                                        'client_id'=>$client_id,
+                                        'server_ip'=>$server_ip,
+                                        'onmessage'=>$onmessage,
+                                        'msg'=>$msg,
+                                        'type'=>$message_data['type'],
+                                        'client_name'=>$_SESSION['client_name'],
+                                        'room_id'=>$_SESSION['room_id'],
+                                        );
+                            /**
+                             * 登陆数据记录
+                             */
+                            //$res=$conn->arrayToInsertSql($insert_arr,'bm_message');
 
-                }
-                return;
-                
-            // 客户端发言 message: {type:say, to_client_id:xx, content:xx}
-            case 'say':
-                // 非法请求
-                if(!isset($_SESSION['room_id']))
-                {
-                    throw new \Exception("\$_SESSION['room_id'] not set. client_ip:{$_SERVER['REMOTE_ADDR']}");
-                }
-                $room_id = $_SESSION['room_id'];
-                $client_name = $_SESSION['client_name'];
-                if($debug_state>0){
-                    $insert_arr=array(
-                                'client_id'=>$client_id,
-                                'server_ip'=>$server_ip,
-                                'onmessage'=>$onmessage,
-                                'msg'=>$msg,
-                                'type'=>$message_data['type'],
-                                'client_name'=>$_SESSION['client_name'],
-                                'room_id'=>$_SESSION['room_id'],
-                                'to_client_name'=>$message_data['to_client_name']
-                                );
-                    $res=$conn->arrayToInsertSql($insert_arr,'bm_message');
+                        }
+                        return;
+                        
+                    // 客户端发言 message: {type:say, to_client_id:xx, content:xx}
+                    case 'say':
+                        // 非法请求
+                        if(!isset($_SESSION['room_id']))
+                        {
+                            throw new \Exception("\$_SESSION['room_id'] not set. client_ip:{$_SERVER['REMOTE_ADDR']}");
+                        }
+                        $room_id = $_SESSION['room_id'];
+                        $client_name = $_SESSION['client_name'];
+                        if($debug_state>0){
+                            $insert_arr=array(
+                                        'client_id'=>$client_id,
+                                        'server_ip'=>$server_ip,
+                                        'onmessage'=>$onmessage,
+                                        'msg'=>$msg,
+                                        'type'=>$message_data['type'],
+                                        'client_name'=>$_SESSION['client_name'],
+                                        'room_id'=>$_SESSION['room_id'],
+                                        'to_client_name'=>$message_data['to_client_name']
+                                        );
+                            $res=$conn->arrayToInsertSql($insert_arr,'bm_message');
 
+                        }
+                        // 私聊
+                        if($message_data['to_client_id'] != 'all')
+                        {
+                            $new_message = array(
+                                'type'=>'say',
+                                'from_client_id'=>$client_id, 
+                                'from_client_name' =>$client_name,
+                                'to_client_id'=>$message_data['to_client_id'],
+                                'content'=>"<b>对你说: </b>".nl2br(htmlspecialchars($message_data['content'])),
+                                'time'=>date('Y-m-d H:i:s'),
+                            );
+                            Gateway::sendToClient($message_data['to_client_id'], json_encode($new_message));
+                            $new_message['content'] = "<b>你对".htmlspecialchars($message_data['to_client_name'])."说: </b>".nl2br(htmlspecialchars($message_data['content']));
+                            return Gateway::sendToCurrentClient(json_encode($new_message));
+                        }
+                        
+                        $new_message = array(
+                            'type'=>'say', 
+                            'from_client_id'=>$client_id,
+                            'from_client_name' =>$client_name,
+                            'to_client_id'=>'all',
+                            'content'=>nl2br(htmlspecialchars($message_data['content'])),
+                            'time'=>date('Y-m-d H:i:s'),
+                        );
+                        return Gateway::sendToGroup($room_id ,json_encode($new_message));
                 }
-                // 私聊
-                if($message_data['to_client_id'] != 'all')
-                {
-                    $new_message = array(
-                        'type'=>'say',
-                        'from_client_id'=>$client_id, 
-                        'from_client_name' =>$client_name,
-                        'to_client_id'=>$message_data['to_client_id'],
-                        'content'=>"<b>对你说: </b>".nl2br(htmlspecialchars($message_data['content'])),
-                        'time'=>date('Y-m-d H:i:s'),
-                    );
-                    Gateway::sendToClient($message_data['to_client_id'], json_encode($new_message));
-                    $new_message['content'] = "<b>你对".htmlspecialchars($message_data['to_client_name'])."说: </b>".nl2br(htmlspecialchars($message_data['content']));
-                    return Gateway::sendToCurrentClient(json_encode($new_message));
-                }
-                
-                $new_message = array(
-                    'type'=>'say', 
-                    'from_client_id'=>$client_id,
-                    'from_client_name' =>$client_name,
-                    'to_client_id'=>'all',
-                    'content'=>nl2br(htmlspecialchars($message_data['content'])),
-                    'time'=>date('Y-m-d H:i:s'),
-                );
-                return Gateway::sendToGroup($room_id ,json_encode($new_message));
+                break;
+            case '7878':
+                echo 7878;
         }
    }
    
@@ -283,7 +281,6 @@ class Events
         );
 
         $debug_state=0;
-       // debug
        if($debug_state==0){
            // echo "client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id onClose:''\n";
        }
