@@ -30,7 +30,7 @@
        ws.onmessage = onmessage; 
        ws.onclose = function() {
     	  console.log("连接关闭，定时重连");
-          connect();
+        //connect();
        };
        ws.onerror = function() {
      	  console.log("出现错误");
