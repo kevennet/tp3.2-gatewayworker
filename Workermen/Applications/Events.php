@@ -24,9 +24,11 @@
  * 主要是处理 onMessage onClose 
  */
 use \GatewayWorker\Lib\Gateway;
-use \GatewayWorker\Lib\Mysqli;
-use \GatewayWorker\Lib\ConfMysqli;
 
+/******************数据库操作****************************/
+//use \GatewayWorker\Lib\Mysqli;
+//use \GatewayWorker\Lib\ConfMysqli;
+/*******************数据库操作***************************/
 class Events
 {
     static $temp_int=0;
@@ -34,8 +36,6 @@ class Events
     static $redis;
     public static function onWorkerStart($businessWorker)
     {
-
-    //   echo "WorkerStart\n";
     }
 
     /**
@@ -44,9 +44,6 @@ class Events
      */
     public static function onConnect($client_id)
     {
-
-        
-        //echo 'connect'.$client_id."===>$time\n";
     }
     /**
      * gatewayworker 协议数据
@@ -56,15 +53,10 @@ class Events
      */
     public static function onWebSocketConnect($client_id, $data)
     {   
-        // self::$redis= new Redis() or die("Cannot load Redis module.");
-        // self::$redis->connect('127.0.0.1',6379);
-
-
     }
 
     public static function onWorkerStop($businessWorker)
     {
-       //echo "WorkerStop\n";
     }
 
    /**
@@ -76,7 +68,11 @@ class Events
    {    
         
         $conn=new Mysqli();
-
+        /**
+         * 根据需求修改这个（聊天）管理员列表
+         * 也可以使用数据库谁查找填充 ，后台管理页面设置
+         * @var array
+         */
         $manage_arr=array(
             'xiao_ming',
             'manage_a',
@@ -196,6 +192,11 @@ class Events
                         /******************************屏蔽全局聊天*************************************/
                         Gateway::joinGroup($client_id, $room_id);
                         $new_message['client_list'] = $clients_list;
+                        /******************************返回当前用户数据*************************************/
+                        //$sql="select * from bm_message where to_client_name = '{$_SESSION['client_name']}' OR client_name = '{$_SESSION['client_name']}'";
+                        //$my_message_data=$conn->get_Rows_Array($sql);
+                        //$new_message['my_message_data']=$my_message_data;
+                        /******************************返回当前用户数据*************************************/
                         Gateway::sendToCurrentClient(json_encode($new_message));
                         if($debug_state>0){
                             $insert_arr=array(
@@ -235,7 +236,10 @@ class Events
                                         'room_id'=>$_SESSION['room_id'],
                                         'to_client_name'=>$message_data['to_client_name']
                                         );
-                            $res=$conn->arrayToInsertSql($insert_arr,'bm_message');
+                            /**
+                             * 聊天数据记录
+                             */
+                            //$res=$conn->arrayToInsertSql($insert_arr,'bm_message');
 
                         }
                         // 私聊
@@ -292,7 +296,11 @@ class Events
     */
    public static function onClose($client_id)
    {
-
+        /**
+         * 根据需求修改这个（聊天）管理员列表
+         * 也可以使用数据库谁查找填充 ，后台管理页面设置
+         * @var array
+         */
         $manage_arr=array(
             'xiao_ming',
             'manage_a',
