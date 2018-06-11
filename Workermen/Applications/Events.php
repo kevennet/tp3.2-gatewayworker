@@ -83,7 +83,7 @@ class Events
         );
 
 
-
+ 
          $debug_state=1;
         if($debug_state==0){
             //echo "client:{$_SERVER['REMOTE_ADDR']}:{$_SERVER['REMOTE_PORT']} gateway:{$_SERVER['GATEWAY_ADDR']}:{$_SERVER['GATEWAY_PORT']}  client_id:$client_id session:".json_encode($_SESSION)." onMessage:".$message."\n";
