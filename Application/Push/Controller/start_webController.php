@@ -19,7 +19,7 @@ use \Workerman\Autoloader;
 
 
 // WebServer
-$web = new WebServer("http://0.0.0.0:55151");
+$web = new WebServer("http://192.168.5.154:60129");
 // WebServer进程数量
 $web->count = 2;
 // 设置站点根目录

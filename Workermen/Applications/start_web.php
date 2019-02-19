@@ -20,11 +20,11 @@ use \Workerman\Autoloader;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // WebServer
-$web = new WebServer("http://0.0.0.0:55151");
+$web = new WebServer("http://192.168.5.154:60129");
 // WebServer进程数量
 $web->count = 2;
 // 设置站点根目录
-$web->addRoot('localhost','D:\xampp\htdocs\tp3.2\Web');
+$web->addRoot('localhost','D:\phpStudy\PHPTutorial\WWW\Web');
 
 
 // 如果不是在根目录启动，则运行runAll方法

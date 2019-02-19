@@ -9129,3 +9129,15 @@ Stack trace:
 2018-06-08 10:58:51 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
 2018-06-08 10:58:52 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
 2018-06-08 10:58:52 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2019-02-19 08:10:43 pid:1 Bad request for Register service. Request info(IP:127.0.0.1, Request Buffer:GET / HTTP/1.1). See http://wiki.workerman.net/Error4 for detail
+2019-02-19 08:10:43 pid:1 Bad request for Register service. Request info(IP:127.0.0.1, Request Buffer:GET / HTTP/1.1). See http://wiki.workerman.net/Error4 for detail
+2019-02-19 08:10:48 pid:1 Bad request for Register service. Request info(IP:127.0.0.1, Request Buffer:GET / HTTP/1.1). See http://wiki.workerman.net/Error4 for detail
+2019-02-19 08:10:53 pid:1 Register auth timeout (127.0.0.1). See http://wiki.workerman.net/Error4 for detail
+2019-02-19 08:43:27 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2019-02-19 08:43:28 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2019-02-19 08:43:29 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2019-02-19 08:43:30 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2019-02-19 08:43:31 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2019-02-19 08:43:32 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2019-02-19 08:43:33 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
+2019-02-19 08:43:34 pid:1 Gateway: Worker->name conflict. Key:127.0.0.1:ChatBusinessWorker:0
